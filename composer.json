@@ -1,0 +1,13 @@
+{
+    "name": "itssonu/lat-long",
+    "description": "get lat long by address",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "itssonu\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
