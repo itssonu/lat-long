@@ -72,7 +72,7 @@ class LatLong
             exit(json_encode($return));
         }
 
-        if ($type = "lat") {
+        if ($type == "lat") {
             return $latlong[0];
         }else{
             return $latlong[1];
