@@ -1,26 +1,30 @@
-# lat-long
-get lat long by address
+# Lat-Long
+[![Issues](https://img.shields.io/github/issues/bitfumes/contact-package.svg?style=flat-square)](https://github.com/itssonu/lat-long/issues)
+[![Stars](	https://img.shields.io/github/stars/bitfumes/contact-package.svg?style=flat-square)](https://github.com/itssonu/lat-long/stargazers)
+
+
+## Get lat long from address
 
 ```cmd
 composer require itssonu/lat-long
 ```
 
-# get lat long
+# Get lat long
 
-## use Pakage
+## Use Pakage
 ```php 
 use itssonu\LatLong;
 ```
-## initialization
+## Initialization
 ```php 
 $latLong = new LatLong;
 ```
 
-## get lat
+## Get lat
 ```php
 $lat = $latLong->getLat($address);
 ```
-## get long
+## Get long
 ```php
 $long = $latLong->getLong($address);
 ```
