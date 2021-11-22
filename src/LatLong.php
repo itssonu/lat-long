@@ -13,11 +13,6 @@ class LatLong
         require_once('vendor/simple_html_dom.php');
     }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
     public function getLatLong($address,$type)
     {
         $address = str_replace(" ", "+", $address);
