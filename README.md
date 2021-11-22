@@ -1,6 +1,6 @@
 # Lat-Long
-[![Issues](https://img.shields.io/github/issues/bitfumes/contact-package.svg?style=flat-square)](https://github.com/itssonu/lat-long/issues)
-[![Stars](	https://img.shields.io/github/stars/bitfumes/contact-package.svg?style=flat-square)](https://github.com/itssonu/lat-long/stargazers)
+[![Issues](https://img.shields.io/github/issues/itssonu/lat-long.svg?style=flat-square)](https://github.com/itssonu/lat-long/issues)
+[![Stars](	https://img.shields.io/github/stars/itssonu/lat-long.svg?style=flat-square)](https://github.com/itssonu/lat-long/stargazers)
 
 
 ## Get lat long from address
