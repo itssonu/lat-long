@@ -6,15 +6,21 @@ composer require itssonu/lat-long
 ```
 
 # get lat long
+
+## use Pakage
+```php 
+use itssonu\LatLong;
+```
+## initialization
+```php 
+$latLong = new LatLong;
+```
+
 ## get lat
 ```php
-use itssonu\LatLong;
-$latLong = new LatLong;
 $lat = $latLong->getLat($address);
 ```
 ## get long
 ```php
-use itssonu\LatLong;
-$latLong = new LatLong;
 $long = $latLong->getLong($address);
 ```
