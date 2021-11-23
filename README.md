@@ -19,12 +19,23 @@ use itssonu\LatLong;
 ```php 
 $latLong = new LatLong;
 ```
+## Get Address
+you can get dynamic address from get or post requests , here we use static address
+```php 
+$address = "clock tower ludhiana punjab";
+```
+## Get lat long method
+```php
+$result = $latLong->getLatLong($address);
+$lat = $result->lat;
+$long = $result->long;
+```
 
-## Get lat
+## Get lat only
 ```php
 $lat = $latLong->getLat($address);
 ```
-## Get long
+## Get long only
 ```php
 $long = $latLong->getLong($address);
 ```
