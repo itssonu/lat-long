@@ -13,7 +13,7 @@ class LatLong
         require_once('vendor/simple_html_dom.php');
     }
 
-    public function getLatLong($address,$type)
+    public function getLatLong($address, $type = null)
     {
         $address = str_replace(" ", "+", $address);
         $url = 'https://www.google.co.in/maps/search/' . $address;
@@ -46,16 +46,38 @@ class LatLong
             $arr = explode('/@', $substring);
 
             if (empty($arr[1])) {
-                $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
-                exit(json_encode($return));
+                if ($type == "lat") {
+                    return null;
+                } elseif ($type == "long") {
+                    return null;
+                }
+                else{
+                    $result = new \stdClass;
+                    $result->lat = null;
+                    $result->long = null;
+                    return $result;
+                }
+                // $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
+                // exit(json_encode($return));
             }
             $substring = $arr[1];
 
             $latlong = (explode(",", $substring));
 
             if (!preg_match("/^[0-9.]+$/i", $latlong[0])) {
-                $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
-                exit(json_encode($return));
+                if ($type == "lat") {
+                    return null;
+                } elseif ($type == "long") {
+                    return null;
+                }
+                else{
+                    $result = new \stdClass;
+                    $result->lat = null;
+                    $result->long = null;
+                    return $result;
+                }
+                // $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
+                // exit(json_encode($return));
             }
         }
 
@@ -63,14 +85,31 @@ class LatLong
 
 
         if (empty($latlong[0]) || empty($latlong[0])) {
-            $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
-            exit(json_encode($return));
+            if ($type == "lat") {
+                return null;
+            } elseif ($type == "long") {
+                return null;
+            }
+            else{
+                $result = new \stdClass;
+                $result->lat = null;
+                $result->long = null;
+                return $result;
+            }
+            // $return = array('result' => "Address not found! ,Please try again.", 'code' => 204);
+            // exit(json_encode($return));
         }
 
         if ($type == "lat") {
             return $latlong[0];
-        }else{
+        } elseif ($type == "long") {
             return $latlong[1];
+        }
+        else{
+            $result = new \stdClass;
+            $result->lat = $latlong[0];
+            $result->long = $latlong[1];
+            return $result;
         }
         // echo "Latitude : ".$latlong[0]."   Longitude : ".$latlong[1];
         // $result = array('lat' => $latlong[0], 'long' => $latlong[1]);
@@ -92,13 +131,13 @@ class LatLong
         return substr($str, $subtring_start, $size);
     }
 
-    public function getLat($address,$type = "lat")
+    public function getLat($address, $type = "lat")
     {
-       return $this->getLatLong($address,$type = "lat");
+        return $this->getLatLong($address, $type = "lat");
     }
 
-    public function getLong($address,$type = "long")
+    public function getLong($address, $type = "long")
     {
-       return $this->getLatLong($address,$type = "long");
+        return $this->getLatLong($address, $type = "long");
     }
 }
